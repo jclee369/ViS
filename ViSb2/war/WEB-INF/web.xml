@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	
+	<servlet>
+		<servlet-name>NewMap</servlet-name>
+		<servlet-class>map.NewMapServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NewMap</servlet-name>
+		<url-pattern>/NewMap</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SaveMap</servlet-name>
+		<servlet-class>map.MapSaveServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SaveMap</servlet-name>
+		<url-pattern>/SaveMap</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LoadMap</servlet-name>
+		<servlet-class>map.MapLoadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoadMap</servlet-name>
+		<url-pattern>/LoadMap</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>GetMap</servlet-name>
+		<servlet-class>map.MapGetServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetMap</servlet-name>
+		<url-pattern>/GetMap</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+	
+	
+	<security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Protected Area</web-resource-name>
+        <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <user-data-constraint>
+        <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+    </user-data-constraint>
+</security-constraint>
+	
+</web-app>

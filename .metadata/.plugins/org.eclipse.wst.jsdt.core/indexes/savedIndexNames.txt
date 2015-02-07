@@ -1,0 +1,1 @@
+INDEX VERSION 1.3+C:\Users\jl\workspace\luna\ViSb2\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes

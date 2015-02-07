@@ -1,0 +1,355 @@
+@CHARSET "ISO-8859-1";
+
+body, html{
+	background-color: green;
+}
+
+/* get rid of blue border on buttons*/
+button, button:hover, button:active{
+	outline: none;
+	border: none;
+}
+
+
+
+div {
+    margin: 0;
+    padding: 0;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    /*3D transform  in order to utilize hardware acceleration of canvas*/
+    -webkit-transform: scale3d(1, 1, 1);
+    -o-user-select: none;
+    user-select: none;
+}
+
+/*will be used if want fixed aspect ratio */
+#container{
+	position: fixed;
+	width: 640px;
+	height: 400px;
+	overflow: hidden;
+}
+
+/* hidden canvas for mapping */
+#fake{
+	position: fixed;
+	top: 0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: none;
+	z-index: 0;
+}
+
+
+#main1{
+	position: fixed;
+    padding: 0px;
+	margin: 0px;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 99;
+}
+
+
+/* game logo icon */
+#bottomtitle{
+	cursor: pointer;
+	position: fixed;
+	padding: 10px;
+	width: 200px;
+	height: 200px; 
+	bottom: 0px;
+	left: 20px;
+	font-size: 25px;
+	font-family: arial, sans-serif;
+	text-align: center;
+	vertical-align: middle;
+	/*
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	box-shadow: 1px 1px 5px #000000; 
+	-moz-border-top-left-radius: 20px;
+	-moz-border-top-right-radius: 20px;
+	-moz-box-shadow: 1px 1px 5px #000000; 
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+	-webkit-box-shadow: 1px 1px 5px #000000; 
+	*/
+	background-image: url('/imgs/ViSlogo.png');
+	background-repeat: no-repeat;
+	z-index: 999;
+}
+
+
+/* the menu containing blocks, terrain, ect.. */
+#bottommenu{
+	position: fixed;
+	width: auto;
+	height: auto; 
+	bottom: 35px;
+	font-size: 10px;
+	left: 250px;  /* left margin + #bottomtitle's width plus padding */
+	font-size: 25px;
+	font-family: arial, sans-serif;
+	text-align: left;
+	background: transparent;
+	z-index: 999;
+}
+#buttonmenu p{
+	font-size: 10px;
+}
+
+#bottommenu button{
+	position: relative;
+	cursor:pointer;
+	padding: 0px;
+	margin: 10px;
+	width: 60px;
+	height: 60px;
+	background-color: #336699;
+	border: 3px solid #000000;
+	z-index: 9999;
+	border-radius: 30px;
+	box-shadow: 1px 1px 1px #000000; 
+	-moz-border-radius: 30px;
+	-moz-box-shadow: 1px 1px 1px #000000; 
+	-webkit-border-radius: 30px;
+	-webkit-box-shadow: 1px 1px 1px #000000; 
+	transform: .1s;
+   -webkit-transform: .1s;
+}
+#bottommenu button:hover, button:focus{
+	background-color: #001100;
+	
+	
+}
+/*
+#mainmenu{
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	
+	z-index: 9999;
+	
+}
+*/
+
+#mainmenu button{
+	position: fixed;
+	bottom: 10px;
+	right: 30px;
+	width: 98px;
+	height: 98px;
+	border: none;
+	background: white;
+	box-shadow: 1px 1px 1px #000000;
+	-moz-box-shadow: 1px 1px 1px #000000;
+	z-index: 9999;
+}
+
+
+/* not used */
+#mainmenu{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	clear: both;
+	background: red;
+	z-index: 999;
+	
+}
+
+/* main menu box container */
+#mainmenubv{
+	position: fixed;
+	top: 25%;
+	width: 100%;
+	z-index: 9999;
+}
+/* main menu box */
+.mainmenub{
+	position: relative;
+	width: 250px;
+	margin: auto;
+	opacity: .9;
+	
+	z-index: 999;
+}
+.mainmenub li{
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	list-decoration: none;
+}
+.mainmenub li button{
+	margin: 0px;
+	width: 100%;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	padding: 10px;
+}
+.mainmenub li button:hover{
+	background-color: #6699ff;
+	color: #333333;
+}
+
+#bottomback{
+	border-top: 1px solid black;
+	position: fixed;
+	width: 100%;
+	height: 90px; 
+	bottom: 0px;
+	left: 0px;
+	font-size: 10px;
+	background-color: black;
+	opacity: .5;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	box-shadow: 1px 1px 5px #000000; 
+	-moz-border-top-left-radius: 20px;
+	-moz-border-top-right-radius: 20px;
+	-moz-box-shadow: 1px 1px 5px #000000; 
+	-webkit-border-top-left-radius: 20px;
+	-webkit-border-top-right-radius: 20px;
+	z-index: 99;
+}
+
+#topmenuback{
+	position: fixed;
+	width: 640px;
+	height: 64px;
+	top: 0px;
+	background-color: black;
+	opacity: .5;
+	border-bottom-right-radius: 20px;
+	box-shadow: 1px 1px 5px #000000; 
+	-moz-border-bottom-right-radius: 20px;
+	-moz-box-shadow: 1px 1px 5px #000000; 
+	-webkit-border-bottom-right-radius: 20px;
+	-webkit-box-shadow: 1px 1px 5px #000000; 
+	overflow: hidden;
+	z-index: 99;
+}
+
+#topmenu{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	margin: 0px;
+	background: transparent;
+	z-index: 999;
+}
+
+#topmenu button{
+	position: relative;
+	cursor:pointer;
+	left-padding: 30px;
+	margin: 10px;
+	width: 64px;
+	height: 64px;
+	font-color: white;
+	background: transparent;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px #000000; 
+	-moz-border-radius: 10px;
+	-moz-box-shadow: 2px 2px 2px #000000; 
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 2px 2px 2px #000000;
+	z-index: 9999;
+	transform: .1s;
+	-webkit-transform: .1s;
+}
+
+#topmenu button:hover{
+	background: transparent;
+	width: 63px;
+	height: 63px;
+}
+
+#fb{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	width: auto;
+	z-index: 9999;
+}
+
+.profilebox{
+	position: absolute;
+	top: 100px;
+	left: 10px;
+	background: black;
+	clear: both;
+	opacity: .8;
+	width: 70px;   /* plus margins 5 on each side */
+	height: 90px;  /* profile picture + room for name + margins 5 on each side */
+	box-shadow: 1px 1px 1px #000000;
+	-moz-box-shadow: 1px 1px 1px #000000;
+	-webkit-box-shadow: 1px 1px 1px #000000;   
+	z-index: 9999;
+}
+.first_name{
+	position: relative;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	width: 60px;
+	height: 15px;
+	background: #336699;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	
+}
+.pic{
+	position: relative;
+	margin: 5px;
+	width: 60px;
+	height: 60px;
+	background: #336699;
+}
+
+.lvld{
+	position: fixed;
+	right: 20px;
+	bottom: 10px;
+	border: none;
+	width: 20px;
+	height: 20px;
+	background: black;
+	opacity: .7;
+	color: #ffffff;
+	z-index: 999;
+}
+
+.lvlu{
+	position: fixed;
+	right: 20px;
+	bottom: 50px;
+	border: none;
+	width: 20px;
+	height: 20px;
+	background: black;
+	opacity: .7;
+	color: #ffffff;
+	z-index: 999;
+}
+
+#levelbox{
+	position: fixed;
+	right: 15px;
+	bottom: 23px;
+	color: #ffffff;
+	background: transparent;
+	width: 20px;
+	height: 25px;
+	z-index: 999;
+}

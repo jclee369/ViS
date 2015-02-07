@@ -1,0 +1,18 @@
+1417580986648	Move file
+1417580990057	Move file
+1417580993199	Move file
+1417580996472	Move file
+1417581007406	Move 'jdoconfig.xml' to 'META-INF'
+1417581014104	Move 'persistence.xml' to 'META-INF'
+1417581020404	Move 'log4j.properties' to 'src'
+1417581026717	Delete element
+1417581035876	Delete element
+1417581045177	Move 'css' to 'war'
+1417581047918	Move 'imgs' to 'war'
+1417581052113	Move 'js' to 'war'
+1417581061033	Move 'WEB-INF' to 'war'
+1417581479565	Move 'game.jsp' to 'war'
+1417581482022	Move 'index.jsp' to 'war'
+1417581484638	Move 'favicon.ico' to 'war'
+1417581491756	Delete element
+1417581497783	Delete element
