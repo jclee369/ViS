@@ -112,7 +112,7 @@ public class MapSaveServlet extends HttpServlet {
 						}
 						if(build.equals("bull")){ // if bulldoze 
 							String[] oldtoks = olddata.split("\\|");
-							if(oldtoks.length > 1){
+							if(oldtoks.length >= 1){
 								for(int i=0; i < oldtoks.length; i++){
 									if(oldtoks[i].equals(tiledata))
 										//remove element -- will leave extra element at end
@@ -131,7 +131,7 @@ public class MapSaveServlet extends HttpServlet {
 							
 								mdata = new Text(newdata);
 							}//end if len >1
-							//else length=(0 or 1), do nothing here because mdata=null already
+							//else length = 0, do nothing here because mdata=null already
 						}//end if bulldoze
 					}//end if tile_list
 					else{ // tiledata does not exist
